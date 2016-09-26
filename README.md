@@ -1,6 +1,8 @@
 # ContactApplication
 A simple contact manager app developed in JEE.
+
 This project is currently on going. We are two students from the university Paris X.
+
 -Nordine AZZA
 -Nivarajh JEYAKUMAR
 -Foule DOUCOURE

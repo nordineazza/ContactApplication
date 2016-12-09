@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client: localhost
--- Généré le: Ven 09 Décembre 2016 à 14:03
+-- Généré le: Ven 09 Décembre 2016 à 17:44
 -- Version du serveur: 5.6.11-log
 -- Version de PHP: 5.3.25
 
@@ -69,7 +69,7 @@ CREATE TABLE IF NOT EXISTS `contact` (
   `email` varchar(32) NOT NULL,
   `id` int(32) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=25 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=39 ;
 
 -- --------------------------------------------------------
 
@@ -81,7 +81,7 @@ CREATE TABLE IF NOT EXISTS `contactgroup` (
   `groupId` int(32) NOT NULL AUTO_INCREMENT,
   `groupName` varchar(32) NOT NULL,
   PRIMARY KEY (`groupId`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=29 ;
 
 -- --------------------------------------------------------
 
@@ -90,14 +90,14 @@ CREATE TABLE IF NOT EXISTS `contactgroup` (
 --
 
 CREATE TABLE IF NOT EXISTS `phonenumber` (
-  `id` int(32) NOT NULL,
+  `id` int(32) NOT NULL AUTO_INCREMENT,
   `idContact` int(32) NOT NULL,
   `phoneKind` varchar(32) NOT NULL,
   `phoneNumber` varchar(32) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `id` (`id`),
   KEY `idContact` (`idContact`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
 
 --
 -- Contraintes pour les tables exportées
@@ -121,8 +121,7 @@ ALTER TABLE `books`
 -- Contraintes pour la table `phonenumber`
 --
 ALTER TABLE `phonenumber`
-  ADD CONSTRAINT `phonenumber_ibfk_2` FOREIGN KEY (`idContact`) REFERENCES `contact` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `phonenumber_ibfk_1` FOREIGN KEY (`id`) REFERENCES `contact` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `phonenumber_ibfk_2` FOREIGN KEY (`idContact`) REFERENCES `contact` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
